@@ -1,7 +1,13 @@
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Main {
     public static void main (String args[]) {
+        Scanner sc = new Scanner (System.in);
+        System.out.print("Forneca um numero: ");
+        int n = sc.nextInt();
+        System.out.println(nroDigit(n));
+        sc.close();
     }
 
     private static int fatorial (int n) {
@@ -62,8 +68,9 @@ public class Main {
     }
 
     private static int nroDigit (int n) {
+        if (n < 10) return 1;
         int remaining = n / 10;
-        return -1;
+        return 1 + nroDigit (remaining);
     }
 
     private static ArrayList<String> permutations (String s) {
